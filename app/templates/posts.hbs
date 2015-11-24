@@ -1,0 +1,12 @@
+<div class="section posts">
+  <div class="container">
+    <ul>
+      {{#each model as |post|}}
+      <li><h4>{{post.title}}</h4>
+        <div>{{post.createdAt}}</div>
+        <p>{{markdown-to-html markdown=post.content}}</p>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
