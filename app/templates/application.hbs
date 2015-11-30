@@ -1,7 +1,7 @@
 <div class="section banner">
   <div class="banner-text">
     <h3>DavidEnglish.ca</h3>
-    <h6>About and Contact</h6>
+    <a class="button button-primary" href="javascript:void(0)" {{action 'jumpToAbout'}}>About and Contact</a>
   </div>
 
   <video preload="auto" autoplay="true" loop="loop" muted="muted" volume="0" class="video-width">
@@ -12,7 +12,7 @@
 
 {{outlet}}
 
-<div class="section about">
+<div id="about" class="section about">
   <div class="container">
     <hr>
     <div class="row">
