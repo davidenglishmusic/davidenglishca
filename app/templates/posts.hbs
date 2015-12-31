@@ -4,7 +4,7 @@
       {{#each reverse as |post|}}
       <li><h5>{{post.title}}</h5>
         <div>{{post.createdAt}}</div>
-        <div>{{{markdown-to-html markdown=post.content}}}</div>
+        <div>{{markdown-to-html markdown=post.content}}</div>
       </li>
       {{/each}}
     </ul>
