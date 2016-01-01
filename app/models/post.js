@@ -4,20 +4,39 @@ var Post = DS.Model.extend({
   title: DS.attr('string'),
   mdURL: DS.attr('string'),
   createdAt: DS.attr('date'),
-  content: function(){
-    var md = null;
-    $.ajax({
-        url: this.get('mdURL'),
-        type: 'get',
-        dataType: 'text',
-        async: false,
-        success: function(data) {
-            md = data;
-        }
-     });
-     return md;
+  md: '',
+  initGetMD: function() {
+    var self = this;
+    getMD(this.get('mdURL')).then(function(md) {
+      // On success
+      self.set('md', md);
+    }, function(reason) {
+      // On fail
+    });
   }.property('content')
 });
+
+function getMD(url) {
+  return new Promise(function(resolve, reject){
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('GET', url);
+    xhr.onreadystatechange = handler;
+    xhr.responseType = 'text';
+    xhr.setRequestHeader('Accept', 'application/text');
+    xhr.send();
+
+    function handler() {
+      if (this.readyState === this.DONE) {
+        if (this.status === 200) {
+          resolve(this.response);
+        } else {
+          reject(new Error('getMD: `' + url + '` failed with status: [' + this.status + ']'));
+        }
+      }
+    };
+  });
+}
 
 Post.reopenClass({
   FIXTURES: [
