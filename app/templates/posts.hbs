@@ -3,7 +3,7 @@
     <ul>
       {{#each reverse as |post|}}
       <li><h5>{{post.title}}</h5>
-        <div>{{post.createdAt}}</div>
+        <div class="date">{{post.createdAt}}</div>
         {{post.initGetMD}}
         <div>{{markdown-to-html markdown=post.md}}</div>
       </li>

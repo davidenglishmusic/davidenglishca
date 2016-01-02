@@ -4,7 +4,7 @@ var Post = DS.Model.extend({
   title: DS.attr('string'),
   mdURL: DS.attr('string'),
   createdAt: DS.attr('date'),
-  md: '',
+  md: DS.attr('string'),
   initGetMD: function() {
     var self = this;
     getMD(this.get('mdURL')).then(function(md) {
@@ -34,7 +34,7 @@ function getMD(url) {
           reject(new Error('getMD: `' + url + '` failed with status: [' + this.status + ']'));
         }
       }
-    };
+    }
   });
 }
 
@@ -51,6 +51,12 @@ Post.reopenClass({
       title: "Segues and IDE synergy",
       mdURL: "assets/markdown/posts/2.md",
       createdAt: "December 15, 2015"
+    },
+    {
+      id: 3,
+      title: "Secret Santa and the importance of iteration",
+      mdURL: "assets/markdown/posts/3.md",
+      createdAt: "January 1, 2016"
     }
   ]
 });

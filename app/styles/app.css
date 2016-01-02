@@ -10,11 +10,19 @@ body {
   margin: 0
 }
 
-.about {
-  padding-bottom: 2rem
+li {
+  margin-bottom: 0
 }
 
-.container ul {
+.date {
+  font-style: italic
+}
+
+.about {
+  padding-bottom: 5rem
+}
+
+.container > ul {
   list-style: none
 }
 
@@ -43,11 +51,13 @@ body {
 }
 
 .banner-text h4 {
+  font-size: 1.5rem;
   margin-bottom: 0rem;
   text-shadow: 1px 1px #000000
 }
 
-.banner-text .button.button-primary {
+.banner-text .button {
+  padding: 0 15px;
   background-color: #595941 !important;
   border-color: #595941 !important
 }
@@ -64,6 +74,15 @@ body {
 
 .summary {
   padding: 1rem
+}
+
+@media (min-width: 500px) {
+  .banner h4 {
+    font-size: 2.4rem
+  }
+  .banner .button {
+    padding: 0 30px;
+  }
 }
 
 @media (min-width: 750px) {
