@@ -26,7 +26,7 @@ li {
   list-style: none
 }
 
-.video-width {
+.section.banner img {
   width: 100%
 }
 
@@ -57,7 +57,7 @@ li {
 }
 
 .banner-text .button {
-  padding: 0 15px;
+  padding: 0 10px;
   background-color: #595941 !important;
   border-color: #595941 !important
 }
