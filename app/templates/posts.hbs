@@ -2,7 +2,9 @@
   <div class="container">
     <ul>
       {{#each reverse as |post|}}
-      <li><h5>{{post.title}}</h5>
+      <li>{{#link-to 'posts.show' post}}
+        <h5>{{post.title}}</h5>
+        {{/link-to}}
         <div class="date">{{post.createdAt}}</div>
         {{post.initGetMD}}
         <div>{{markdown-to-html markdown=post.md}}</div>
