@@ -1,25 +1,6 @@
-<div class="section banner">
-  <div class="banner-text">
-    <h4>DavidEnglish.ca</h4>
-    <a class="button button-primary" href="javascript:void(0)" {{action 'jumpToAbout'}}>About and Contact</a>
-  </div>
-
-  <img src="assets/image/banner_widgeon.jpg">
-</div>
+<nav>
+    <div id="nav-home" class="nav-item">{{#link-to 'posts'}}DavidEnglish.ca{{/link-to}}</div>
+    <div id="nav-contact" class="nav-item">{{#link-to 'contact'}}About and Contact{{/link-to}}</div>
+</nav>
 
 {{outlet}}
-
-<div id="about" class="section about">
-  <div class="container">
-    <hr>
-    <div class="row">
-        <div class="three columns portrait">
-          <img alt="David English" src="assets/image/david_english_300.png">
-        </div>
-        <div class="nine columns summary">
-          <p>Hi there. My name is David and I am a software developer. Following a lengthy stint as an opera singer, I moved into computing. I currently work for <a href="https://bandzoogle.com">Bandzoogle</a> on their Rails/Ember app which powers over 25,000 websites. I live in North Vancouver with my wife.</p>
-          <p>You can reach me by <a href="mailto:contactdavidenglish@gmail.com">email</a>, <a href="https://twitter.com/davidenglish_ca">Twitter</a>, or if you like, you can checkout my <a href="https://ca.linkedin.com/in/david-english-ab331384">LinkedIn</a>.</p>
-        </div>
-      </div>
-  </div>
-</div>

@@ -1,16 +1,18 @@
 a {
+  color: #425223;
   text-decoration: none
+}
+
+a:hover {
+  color: #83A346
 }
 
 p, pre {
   margin-bottom: 1rem
 }
 
-hr {
-  margin-top: 0
-}
-
 body {
+  background-color: #FAFCFA;
   margin: 0
 }
 
@@ -20,10 +22,6 @@ li {
 
 .date {
   font-style: italic
-}
-
-.about {
-  padding-bottom: 5rem
 }
 
 .container > ul {
@@ -38,6 +36,10 @@ li {
   padding: 1rem
 }
 
+.section.contact {
+  padding: 1rem
+}
+
 .section.posts h5 {
   margin-bottom: 1rem
 }
@@ -47,23 +49,29 @@ li {
   padding-bottom: 1rem
 }
 
-.banner-text {
-  position:absolute;
+nav {
+  position: absolute;
+  width: 100%
+}
+
+nav .nav-item {
+  font-size: 1rem;
   padding: 1rem;
-  color: #EEEEEE;
-  z-index: 1
+  position: absolute;
+
 }
 
-.banner-text h4 {
-  font-size: 1.5rem;
-  margin-bottom: 0rem;
-  text-shadow: 1px 1px #000000
+nav .nav-item a {
+  color: #FAFCFA;
+  text-shadow: 1px 1px #000
 }
 
-.banner-text .button {
-  padding: 0 10px;
-  background-color: #595941 !important;
-  border-color: #595941 !important
+#nav-contact {
+  right: 0
+}
+
+#return {
+  padding: 1rem
 }
 
 .portrait {
@@ -76,22 +84,18 @@ li {
   border-radius: 50%
 }
 
-.summary {
-  padding: 1rem
-}
-
 @media (min-width: 500px) {
-  .banner h4 {
-    font-size: 2.4rem
+  nav .nav-item {
+    font-size: 1.5rem
   }
-  .banner .button {
-    padding: 0 30px;
+  .summary {
+    padding: 1rem
   }
 }
 
 @media (min-width: 750px) {
-  .about {
-    padding-bottom: 25rem
+  nav .nav-item {
+    font-size: 2.4rem
   }
   .summary {
     padding-top: 3rem

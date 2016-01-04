@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('posts');
   this.route('posts.show', {path: 'posts/:post_id'});
   this.resource('posts', { path: "/"});
+  this.route('contact');
 });
 
 export default Router;

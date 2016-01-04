@@ -1,5 +1,10 @@
+<div class="section banner">
+  <img src="assets/image/banner_widgeon_002.jpg">
+</div>
+
 <div class="section posts">
   <div class="container">
+    {{#link-to 'posts'}}Back to posts{{/link-to}}
     <h5>{{model.title}}</h5>
     <div class="date">{{model.createdAt}}</div>
     {{model.initGetMD}}
