@@ -1,6 +1,7 @@
 a {
   color: #425223;
-  text-decoration: none
+  text-decoration: none;
+  outline: 0
 }
 
 a:hover {
