@@ -50,25 +50,65 @@ li {
   padding-bottom: 1rem
 }
 
-nav {
-  position: absolute;
+#title-menu-container {
+  background-color: #040602;
   width: 100%
 }
 
-nav .nav-item {
-  font-size: 1rem;
-  padding: 1rem;
-  position: absolute;
-
+#site-title {
+  display: inline-block;
+  z-index: 1;
+  padding: 1rem
 }
 
-nav .nav-item a {
+#site-title h5 {
   color: #FAFCFA;
-  text-shadow: 1px 1px #000
+  margin-bottom: 0
 }
 
-#nav-contact {
-  right: 0
+#menu-toggle {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  padding: 1rem;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  z-index: 1
+}
+
+#menu-toggle a {
+  color: #FAFCFA
+}
+
+nav {
+  width: 100%;
+  text-align: center;
+  display: block;
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out
+}
+
+nav.hide {
+  height: 0px;
+  position: relative
+}
+
+nav ul {
+  list-style: none;
+  margin-bottom: 0
+}
+
+nav ul li {
+  color: #FAFCFA;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-top: solid #FAFCFA 1px
+}
+
+nav a {
+  color: #FAFCFA
 }
 
 #return {
@@ -85,25 +125,60 @@ nav .nav-item a {
   border-radius: 50%
 }
 
-@media (min-width: 500px) {
-  nav .nav-item {
-    font-size: 1.5rem
+@media (min-width: 550px) {
+  #menu-toggle {
+    font-size: 2.4rem
   }
+
   .summary {
     padding: 1rem
   }
 }
 
 @media (min-width: 750px) {
-  nav .nav-item {
-    font-size: 2.4rem
+  #title-menu-container {
+    width: 100%
   }
-  .summary {
-    padding-top: 3rem
+
+  #site-title {
+    padding: 0;
+    padding-left: 1rem
+  }
+
+  #site-title h5 {
+    text-align: left
+  }
+
+  #menu-toggle {
+    display: none
+  }
+
+  nav {
+    position: absolute;
+    display: inline-block;
+    width: auto;
+    right: 0;
+    height: auto;
+    padding: 0.5rem 1rem 0.5rem 0rem
+  }
+
+  nav.hide {
+    position: absolute;
+    height: auto;
+    display: inline-block;
+    padding: 0.5rem 1rem 0.5rem 0rem
+  }
+
+  nav ul li {
+    display: inline-block;
+    border-top: none
   }
 }
 
 @media (min-width: 1000px) {
+  .section.contact {
+    padding-top: 4rem
+  }
   .summary {
     padding-top: 4rem
   }

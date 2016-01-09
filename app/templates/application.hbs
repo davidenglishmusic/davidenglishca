@@ -1,6 +1,14 @@
-<nav>
-    <div id="nav-home" class="nav-item">{{#link-to 'posts'}}DavidEnglish.ca{{/link-to}}</div>
-    <div id="nav-contact" class="nav-item">{{#link-to 'contact'}}About and Contact{{/link-to}}</div>
-</nav>
+<div id="title-menu-container">
+  <div id="site-title">
+    <h5>DAVIDENGLISH.CA</h5>
+  </div>
+  <div id="menu-toggle"><a href='javascript:void(0)' {{action 'toggleMenu'}}>☰</a></div>
+  <nav class="hide">
+    <ul>
+      <li>{{#link-to 'posts'}}HOME{{/link-to}}</li>
+      <li>{{#link-to 'contact'}}ABOUT/CONTACT{{/link-to}}</li>
+    </ul>
+  </nav>
+</div>
 
 {{outlet}}

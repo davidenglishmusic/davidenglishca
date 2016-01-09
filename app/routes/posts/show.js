@@ -1,7 +1,7 @@
 import Ember from 'ember';
-import ResetScrollMixin from '../../mixins/reset-scroll';
+import ActivateResetsMixin from '../../mixins/activate-resets';
 
-export default Ember.Route.extend(ResetScrollMixin, {
+export default Ember.Route.extend(ActivateResetsMixin, {
   activate: function() {
     this._super.apply(this, arguments);
   }
