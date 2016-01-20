@@ -57,6 +57,12 @@ Post.reopenClass({
       title: "Secret Santa and the importance of iteration",
       mdURL: "assets/markdown/posts/3.md",
       createdAt: "January 1, 2016"
+    },
+    {
+      id: 4,
+      title: "Matisse and movie colors",
+      mdURL: "assets/markdown/posts/4.md",
+      createdAt: "January 19, 2016"
     }
   ]
 });
