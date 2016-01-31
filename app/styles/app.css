@@ -50,6 +50,10 @@ li {
   width: 100%
 }
 
+.section.posts #pagination {
+  text-align: right
+}
+
 #title-menu-container {
   background-color: #040602;
   width: 100%

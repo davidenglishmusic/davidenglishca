@@ -5,7 +5,7 @@
   <div id="menu-toggle"><a href='javascript:void(0)' {{action 'toggleMenu'}}>☰</a></div>
   <nav class="hide">
     <ul>
-      <li>{{#link-to 'posts'}}HOME{{/link-to}}</li>
+      <li>{{#link-to 'posts' (query-params page="null")}}HOME{{/link-to}}</li>
       <li>{{#link-to 'contact'}}ABOUT/CONTACT{{/link-to}}</li>
     </ul>
   </nav>

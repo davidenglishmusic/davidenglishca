@@ -5,7 +5,7 @@
 <div class="section posts">
   <div class="container">
     <ul>
-      {{#each reverse as |post|}}
+      {{#each paginated as |post|}}
       <li>{{#link-to 'posts.show' post}}
         <h5>{{post.title}}</h5>
         {{/link-to}}
@@ -15,5 +15,17 @@
       </li>
       {{/each}}
     </ul>
+
+    <div id="pagination">
+      {{#if olderPostsExist}}
+        {{#link-to 'posts' (query-params page=olderPage)}}Older Posts{{/link-to}}
+      {{/if}}
+      {{#if needsPaginationSeperator}}
+         -
+      {{/if}}
+      {{#if newerPostsExist}}
+         {{#link-to 'posts' (query-params page=newerPage)}}Newer Posts{{/link-to}}
+      {{/if}}
+    </div>
   </div>
 </div>
