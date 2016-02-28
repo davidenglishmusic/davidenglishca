@@ -10,7 +10,6 @@ export default Ember.Controller.extend({
   paginated: function(){
     var page = this.get('page');
     if (page){
-      var POSTS_PER_PAGE = 3;
       return this.get('reverse').slice(page * this.get('POSTS_PER_PAGE') - this.get('POSTS_PER_PAGE'), page * this.get('POSTS_PER_PAGE'));
     }
     else {
