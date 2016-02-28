@@ -3,7 +3,6 @@
     {{#link-to 'posts'}}Back to posts{{/link-to}}
     <h5>{{model.title}}</h5>
     <div class="date">{{model.createdAt}}</div>
-    {{model.initGetMD}}
     <div>{{markdown-to-html markdown=model.md}}</div>
   </div>
 </div>
