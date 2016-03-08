@@ -6,6 +6,6 @@ export default Ember.Mixin.create({
     if(!Ember.$('nav').hasClass('hide')){
       Ember.$('nav').addClass('hide');
     }
-    window.scrollTo(0,0);
+    Ember.$('body').scrollTop(0);
   }
 });
