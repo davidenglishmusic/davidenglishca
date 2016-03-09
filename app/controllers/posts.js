@@ -2,56 +2,24 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   queryParams: ['page'],
-  page: null,
-  POSTS_PER_PAGE: 3,
+  page: 1,
+  postsPerPage: Ember.computed(function(){
+    return 3;
+  }),
+  currentPage: Ember.computed('page', function(){
+    return this.get('page');
+  }),
   reverse: function(){
     return this.get('model').toArray().reverse();
   }.property('model.[]'),
   paginated: function(){
-    var page = this.get('page');
-    if (page){
-      return this.get('reverse').slice(page * this.get('POSTS_PER_PAGE') - this.get('POSTS_PER_PAGE'), page * this.get('POSTS_PER_PAGE'));
-    }
-    else {
+    var currentPage = this.get('currentPage');
+    var postsPerPage = this.get('postsPerPage');
+    if (currentPage == 1) {
       return this.get('reverse').slice(0,3);
     }
-  }.property('model.[]', 'page'),
-  olderPostsExist: function(){
-    var page = this.get('page');
-    var totalPostCount = this.get('model').get('length');
-    if(totalPostCount > page * this.get('POSTS_PER_PAGE')){
-      return true;
+    else{
+      return this.get('reverse').slice(currentPage * postsPerPage - postsPerPage, currentPage * postsPerPage);
     }
-    else {
-      return false;
-    }
-  }.property('page'),
-  olderPage: function(){
-    if (this.get('page') == null){
-      return 2;
-    }
-    else {
-      return parseInt(this.get('page')) + 1;
-    }
-  }.property('page'),
-  newerPostsExist: function(){
-    var page = this.get('page');
-    if(page > 1){
-      return true;
-    }
-    else {
-      return false;
-    }
-  }.property('page'),
-  newerPage: function(){
-    return parseInt(this.get('page')) - 1;
-  }.property('page'),
-  needsPaginationSeperator: function(){
-    if (this.get('olderPosts') && this.get('newerPosts')){
-      return true;
-    }
-    else {
-      return false;
-    }
-  }.property('page')
+  }.property('model.[]', 'page')
 });

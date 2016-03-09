@@ -15,16 +15,6 @@
       {{/each}}
     </ul>
 
-    <div id="pagination">
-      {{#if olderPostsExist}}
-        {{#link-to 'posts' (query-params page=olderPage)}}Older Posts{{/link-to}}
-      {{/if}}
-      {{#if needsPaginationSeperator}}
-         -
-      {{/if}}
-      {{#if newerPostsExist}}
-         {{#link-to 'posts' (query-params page=newerPage)}}Newer Posts{{/link-to}}
-      {{/if}}
-    </div>
+    {{pagination-widget paginatedItems=model itemsPerPage=3 currentPage=currentPage}}
   </div>
 </div>
